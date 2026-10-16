@@ -34,6 +34,9 @@ Key findings included:
 ## Dashboard
 The Power BI dashboard presents sales and profitability metrics through visualizations and interactive filters, allowing users to explore performance across different business segments.
 
+![Dashboard Overview 1](pbi1.png)
+![Dashboard Overview 2](pbi2.png)
+
 ## Recommendations
 - Review discounts that result in selling prices below unit cost.
 - Monitor sales revenue alongside gross profit and profit margins.
