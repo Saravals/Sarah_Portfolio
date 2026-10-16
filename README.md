@@ -11,6 +11,11 @@ This project analyzes a synthetic sales dataset containing 1,000 records to unde
 - MySQL Workbench and SQL
 - Power BI
 
+  ### Project Files
+* [Power BI Report File](PBI%20sales-data-project2.pbix)
+*  [SQL Data Cleaning & Analysis Queries](sales_data_Project2.sql)
+*  [Raw Dataset (CSV)](sales_data_Project2.csv)
+
 ## Data Cleaning and Preparation
 Using Excel Power Query, I:
 - Checked for duplicate records and missing values.
@@ -31,11 +36,32 @@ Key findings included:
 - Clothing recorded the highest net sales among product categories but also the largest gross loss.
 - Higher discount levels generally coincided with lower gross profit margins.
 
+### Key SQL Queries
+
+Here is an example query used to analyze **Gross Profit Margin by Region**, which helped identify high-performing versus loss-making territories:
+
+```sql
+SELECT 
+    Region,
+    ROUND(
+        SUM(`Calculated Gross Profit`)
+        / SUM(`Calculated Net Sales`) * 100,
+        2
+    ) AS Gross_Profit_Margin_Percent
+FROM sales_data_project2
+GROUP BY Region
+ORDER BY Gross_Profit_Margin_Percent DESC;
+```
 ## Dashboard
 The Power BI dashboard presents sales and profitability metrics through visualizations and interactive filters, allowing users to explore performance across different business segments.
 
-![Dashboard Overview 1](pbi1.png)
-![Dashboard Overview 2](pbi2.png)
+### Dashboard Views
+
+#### Page 1: Sales Performance Overview
+![Dashboard Page 1](pbi1.png)
+
+#### Page 2: Profitability & Discount Analysis
+![Dashboard Page 2](pbi2.png)
 
 ## Recommendations
 - Review discounts that result in selling prices below unit cost.
